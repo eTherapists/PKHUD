@@ -1,18 +1,19 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-iOS%2017%2B-lightgrey.svg?style=flat)](Package.swift)
 [![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
 
-A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 8** and up.
+A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,…) **for iOS 17** and up.
 
 ## Features
-- Official iOS 8 blur effect via **UIVisualEffectsView**.
+- Official blur effect via **UIVisualEffectView**.
 - Proper **rotation support**.
 - Size / **Device agnostic**.
 - Works on top of presented view controllers, alerts,...
 - Comes with several *free* resources - Checkmark, Cross, Progress Indicator,…
 - …as well as **animated** ones.
-- Builds as an **iOS 8 framework**.
+- Ships as a **Swift package** for **iOS 17** and later.
 
 ![PKHUD.gif](https://cloud.githubusercontent.com/assets/1275218/10124182/09f4c406-654f-11e5-9cab-0f2e6f470887.gif)
 
