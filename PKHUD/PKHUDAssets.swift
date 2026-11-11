@@ -19,26 +19,12 @@ open class PKHUDAssets: NSObject {
 
     internal class func bundledImage(named name: String) -> UIImage {
         #if SWIFT_PACKAGE
-        // Swift Package Manager puts the asset catalog in its own resource bundle.
-        // The compiler only defines SWIFT_PACKAGE there, so CocoaPods builds skip this.
-        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
-            return image
-        }
+        // Swift Package Manager puts the asset catalog in the package's own resource bundle.
+        let bundle = Bundle.module
+        #else
+        // The framework target in PKHUD.xcodeproj, which only the demo app uses, keeps it in the framework.
+        let bundle = Bundle(for: PKHUDAssets.self)
         #endif
-
-        let primaryBundle = Bundle(for: PKHUDAssets.self)
-        if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
-            // Load image in cases where PKHUD is directly integrated
-            return image
-        } else if
-            let subBundleUrl = primaryBundle.url(forResource: "PKHUDResources", withExtension: "bundle"),
-            let subBundle = Bundle(url: subBundleUrl),
-            let image = UIImage(named: name, in: subBundle, compatibleWith: nil)
-        {
-            // Load image in cases where PKHUD is integrated via cocoapods as a dynamic or static framework with a separate resource bundle
-            return image
-        }
-
-        return UIImage()
+        return UIImage(named: name, in: bundle, compatibleWith: nil) ?? UIImage()
     }
 }

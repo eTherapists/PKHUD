@@ -1,9 +1,5 @@
-[![Build Status](https://travis-ci.org/pkluz/PKHUD.svg?branch=master)](https://travis-ci.org/pkluz/PKHUD)
-[![License](https://img.shields.io/cocoapods/l/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD) 
-[![Platform](https://img.shields.io/cocoapods/p/PKHUD.svg?style=flat)](http://cocoadocs.org/docsets/PKHUD/3.2.1/) 
-[![CocoaPod](https://img.shields.io/cocoapods/v/PKHUD.svg?style=flat)](https://cocoapods.org/pods/PKHUD)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 ![PKHUD - Swift and easy](https://raw.githubusercontent.com/pkluz/PKHUD/master/README_hero.png)
 
@@ -21,52 +17,13 @@ A **Swift** based reimplementation of the Apple HUD (Volume, Ringer, Rotation,�
 ![PKHUD.gif](https://cloud.githubusercontent.com/assets/1275218/10124182/09f4c406-654f-11e5-9cab-0f2e6f470887.gif)
 
 ## Installation
-**The recommended way is to use CocoaPods.**
+PKHUD is distributed through Swift Package Manager only.
 
-### CocoaPods
+In Xcode, choose **File › Add Package Dependencies…** and enter `https://github.com/eTherapists/PKHUD.git`.
 
-To install PKHUD for Swift 2 using CocoaPods, include the following in your Podfile
-
-```ruby
-pod 'PKHUD', '~> 3.0'
-```
-
-To install PKHUD for Swift 3.x using CocoaPods, include the following in your Podfile
-
-```ruby
-pod 'PKHUD', '~> 4.0'
-```
-
-To install PKHUD for Swift 4.x, include the following in your Podfile
-
-```ruby
-pod 'PKHUD', '~> 5.0'
-```
-
-### Carthage
-
-[Carthage](https://github.com/Carthage/Carthage) is a decentralized dependency manager that builds your dependencies and provides you with binary frameworks.
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate PKHUD into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```ogdl
-github "pkluz/PKHUD" ~> 4.0
-```
-
-Run `carthage update` to build the framework and drag the built `PKHUD.framework` into your Xcode project.
-
-### Swift Package Manager
-
-To install using Swift Package Manager, add this to the `dependencies:` section in your Package.swift file:
+In a `Package.swift`, add it to `dependencies:`
 ```swift
-.package(url: "https://github.com/pkluz/PKHUD.git", .upToNextMinor(from: "5.4.0")),
+.package(url: "https://github.com/eTherapists/PKHUD.git", branch: "develop"),
 ```
 
 ## How To
