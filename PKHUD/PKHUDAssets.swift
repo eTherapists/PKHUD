@@ -18,6 +18,14 @@ open class PKHUDAssets: NSObject {
     open class var progressCircularImage: UIImage { return PKHUDAssets.bundledImage(named: "progress_circular") }
 
     internal class func bundledImage(named name: String) -> UIImage {
+        #if SWIFT_PACKAGE
+        // Swift Package Manager puts the asset catalog in its own resource bundle.
+        // The compiler only defines SWIFT_PACKAGE there, so CocoaPods builds skip this.
+        if let image = UIImage(named: name, in: .module, compatibleWith: nil) {
+            return image
+        }
+        #endif
+
         let primaryBundle = Bundle(for: PKHUDAssets.self)
         if let image = UIImage(named: name, in: primaryBundle, compatibleWith: nil) {
             // Load image in cases where PKHUD is directly integrated
